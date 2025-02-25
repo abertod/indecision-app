@@ -1,47 +1,16 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <h1>Mi primera app de Vue</h1>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+  <h1 class="text-5xl text-rose-800 font-bold underline">Hello world!</h1>
 
-  <main>
-    <TheWelcome />
-  </main>
+  <MeusNumerator :valorem="7" />
+  <MeusNumeratorScript :valorem="10" />
+
+  <MeusNumeratorScript2 :valorem="2" />
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+<script lang="ts" setup>
+import MeusNumerator from './components/MeusNumerator.vue';
+import MeusNumeratorScript from './components/MeusNumeratorScript.vue';
+import MeusNumeratorScript2 from './components/meus-numerator-script/MeusNumeratorScript2.vue';
+</script>
