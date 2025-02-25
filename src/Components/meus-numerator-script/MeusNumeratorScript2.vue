@@ -1,4 +1,3 @@
-<!--
 <template>
   <h3>Counter: {{ numerus }}</h3>
   <h3>Square: {{ quadrataNumerus }}</h3>
@@ -10,4 +9,3 @@
 </template>
 
 <script lang="ts" src="./MeusNumeratorScript2.ts"></script>
--->
