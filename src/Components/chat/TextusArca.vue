@@ -4,9 +4,12 @@
       type="text"
       class="px-4 py-2 flex-1 border rounded-full focus:outline-none"
       placeholder="Escribe tu mensaje..."
+      v-model="nuntius"
+      @keypress.enter="mitteNuntius"
     />
 
     <button
+      @click="mitteNuntius"
       class="bg-blue-500 text-white rounded-full p-2 ml-2 hover:bg-blue-600 focus:outline-none"
     >
       <svg
@@ -32,3 +35,20 @@
     </button>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { ref } from 'vue';
+
+const emmits = defineEmits<{
+  mitteNuntius: [textus: string];
+}>();
+
+const nuntius = ref('');
+
+const mitteNuntius = () => {
+  if (!nuntius.value) return;
+  emmits('mitteNuntius', nuntius.value);
+  console.log(nuntius.value);
+  nuntius.value = '';
+};
+</script>
