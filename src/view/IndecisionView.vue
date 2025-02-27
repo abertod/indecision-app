@@ -4,7 +4,7 @@
       <span>La esposa de otro</span>
     </div>
 
-    <ChatNuntii />
+    <ChatNuntii :nuntii="nuntii" />
 
     <TextusArca />
   </div>
@@ -13,4 +13,20 @@
 <script lang="ts" setup>
 import ChatNuntii from '@/components/chat/ChatNuntii.vue';
 import TextusArca from '@/components/chat/TextusArca.vue';
+import type { ChatNuntius } from '@/interfaces/chat-nuntius-interface';
+import { ref } from 'vue';
+
+const nuntii = ref<ChatNuntius[]>([
+  {
+    id: new Date().getTime(),
+    nuntius: '¿Cuándo nos vemos?',
+    meusEst: true,
+  },
+  {
+    id: new Date().getTime() + 1,
+    nuntius: 'No',
+    meusEst: false,
+    imago: 'https://yesno.wtf/assets/no/10-d5ddf3f82134e781c1175614c0d2bab2.gif',
+  },
+]);
 </script>
